@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?eclipse version="3.2"?>
+<plugin>
+   <extension
+         id="application"
+         point="org.eclipse.core.runtime.applications">
+      <application>
+         <run
+               class="com.jeroenjanssens.presto.Application">
+         </run>
+      </application>
+   </extension>
+   <extension
+         point="org.eclipse.ui.perspectives">
+      <perspective
+            class="com.jeroenjanssens.presto.views.EditPerspective"
+            id="com.jeroenjanssens.presto.perspectives.editperspective"
+            name="Edit">
+      </perspective>
+      <perspective
+            class="com.jeroenjanssens.presto.views.PlayPerspective"
+            id="com.jeroenjanssens.presto.perspectives.playperspective"
+            name="Play">
+      </perspective>
+   </extension>
+   <extension
+         point="org.eclipse.ui.views">
+      <view
+            allowMultiple="false"
+            class="com.jeroenjanssens.presto.views.earth.EarthView"
+            icon="icons/Map.gif"
+            id="com.jeroenjanssens.presto.views.earthview"
+            name="Earth"
+            restorable="true">
+      </view>
+      <view
+            name="Mailboxes"
+            allowMultiple="true"
+            icon="icons/sample3.gif"
+            class="com.jeroenjanssens.presto.views.NavigationView"
+            id="com.jeroenjanssens.presto.views.navigationview">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.jeroenjanssens.presto.views.LayersView"
+            icon="icons/layer_view.gif"
+            id="com.jeroenjanssens.presto.views.layersview"
+            name="Layers"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.jeroenjanssens.presto.views.TracksView"
+            icon="icons/layer_view.gif"
+            id="com.jeroenjanssens.presto.views.tracksview"
+            name="Tracks"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.jeroenjanssens.presto.views.TimeLineView"
+            icon="icons/Map.gif"
+            id="com.jeroenjanssens.presto.views.timelineview"
+            name="Timeline"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.jeroenjanssens.presto.views.properties.GeneralPropertiesView"
+            icon="icons/prop_ps.gif"
+            id="com.jeroenjanssens.presto.views.properties.scenariopropertiesview"
+            name="Properties"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.jeroenjanssens.presto.views.properties.WaypointPropertiesView"
+            icon="icons/Map.gif"
+            id="com.jeroenjanssens.presto.views.properties.waypointpropertiesview"
+            name="Waypoint Properties"
+            restorable="true">
+      </view>
+      <view
+            allowMultiple="false"
+            class="com.jeroenjanssens.presto.views.properties.TrackPropertiesView"
+            icon="icons/Map.gif"
+            id="com.jeroenjanssens.presto.views.properties.trackpropertiesview"
+            name="Track Properties"
+            restorable="true">
+      </view>
+   </extension>
+   <extension
+         point="org.eclipse.ui.commands">
+      <category
+            name="Main"
+            id="com.jeroenjanssens.presto.category.main">
+      </category>
+      <command
+            name="Open Scenario"
+            description="Open Scenario"
+            categoryid="com.jeroenjanssens.presto.category.main"
+            id="com.jeroenjanssens.presto.actions.open">
+      </command>
+      <category
+            id="com.jeroenjanssens.presto.category.edit"
+            name="Edit">
+      </category>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Navigation Tool"
+            id="com.jeroenjanssens.presto.actions.navigation"
+            name="Navigation Tool">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Track Selection Tool"
+            id="com.jeroenjanssens.presto.actions.trackselection"
+            name="Track Selection Tool">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Draw Track Tool"
+            id="com.jeroenjanssens.presto.actions.drawtrack"
+            name="Draw Track Tool">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Waypoint Selection Tool"
+            id="com.jeroenjanssens.presto.actions.vertexselection"
+            name="Waypoint Selection Tool">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Insert Waypoint Tool"
+            id="com.jeroenjanssens.presto.actions.insertvertex"
+            name="Insert Waypoint Tool">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Remove Waypoint Tool"
+            id="com.jeroenjanssens.presto.actions.removevertex"
+            name="Remove Waypoint Tool">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Reset Earth View"
+            id="com.jeroenjanssens.presto.actions.resetearthview"
+            name="Reset Earth View">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.main"
+            description="New Scenario"
+            id="com.jeroenjanssens.presto.actions.newscenario"
+            name="New Scenario">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.edit"
+            description="Export Scenario"
+            id="com.jeroenjanssens.presto.actions.export"
+            name="Export Scenario">
+      </command>
+      <command
+            categoryid="com.jeroenjanssens.presto.category.view"
+            description="Load Background"
+            id="com.jeroenjanssens.presto.actions.loadbackground"
+            name="Load Background">
+      </command>
+   </extension>
+   <extension
+         point="org.eclipse.ui.bindings">
+      <key
+            commandid="com.jeroenjanssens.presto.actions.open"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+O">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.openmessage"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+3">
+      </key>
+      <key
+            commandId="org.eclipse.ui.file.exit"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+X">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.navigation"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="ALT+N">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.trackselection"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="ALT+T">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.vertexselection"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="ALT+W">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.drawtrack"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="ALT+D">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.insertvertex"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="ALT+I">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.removevertex"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="ALT+R">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.resetearthview"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+ALT+SHIFT+R">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.newscenario"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+N">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.export"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+ALT+E">
+      </key>
+      <key
+            commandid="com.jeroenjanssens.presto.actions.loadbackground"
+            contextId="org.eclipse.ui.contexts.window"
+            schemeId="org.eclipse.ui.defaultAcceleratorConfiguration"
+            sequence="CTRL+SHIFT+ALT+B">
+      </key>
+   </extension>
+   <extension
+         id="product"
+         point="org.eclipse.core.runtime.products">
+      <product
+            application="Presto.application"
+            name="Presto">
+         <property
+               name="aboutText"
+               value="Presto 1.0.0&#x0A;&#x0A;Developed by Jeroen Janssens&#x0A;Copyright 2009 Tilburg University. All rights reserved.&#x0A;&#x0A;Presto is free software: you can redistribute it and/or modify&#x0A;it under the terms of the GNU General Public License as published by&#x0A;the Free Software Foundation, either version 3 of the License, or&#x0A;(at your option) any later version.&#x0A;&#x0A;Presto is distributed in the hope that it will be useful,&#x0A;but WITHOUT ANY WARRANTY; without even the implied warranty of&#x0A;MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the&#x0A;GNU General Public License for more details.&#x0A;&#x0A;You should have received a copy of the GNU General Public License&#x0A;along with Presto.  If not, see &lt;http://www.gnu.org/licenses/&gt;.">
+         </property>
+         <property
+               name="windowImages"
+               value="icons/presto_16.png,icons/presto_32.png,icons/presto_48.png,icons/presto_64.png,icons/presto_128.png">
+         </property>
+         <property
+               name="aboutImage"
+               value="about.gif">
+         </property>
+         <property
+               name="appName"
+               value="Presto">
+         </property>
+         <property
+               name="startupProgressRect"
+               value="5,275,445,15">
+         </property>
+         <property
+               name="preferenceCustomization"
+               value="plugin_customization.ini">
+         </property>
+         <property
+               name="startupForegroundColor"
+               value="C0C0C0">
+         </property>
+         <property
+               name="startupMessageRect"
+               value="7,240,445,20">
+         </property>
+      </product>
+   </extension>
+   <extension
+         point="org.eclipse.ui.editors">
+      <editor
+            class="com.jeroenjanssens.presto.views.scenario.ScenarioEditor"
+            default="false"
+            icon="icons/scenario.gif"
+            id="com.jeroenjanssens.presto.editors.scenarioeditor"
+            name="Scenario Editor">
+      </editor>
+   </extension>
+</plugin>

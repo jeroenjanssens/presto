@@ -1,0 +1,85 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?pde version="3.4"?>
+
+<product name="Presto" id="Presto.product" application="Presto.application" version="1.0.0" useFeatures="false">
+
+   <aboutInfo>
+      <image path="about.gif"/>
+      <text>
+         Presto 1.0.0
+
+Developed by Jeroen Janssens
+Copyright 2009 Tilburg University. All rights reserved.
+
+Presto is free software: you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation, either version 3 of the License, or
+(at your option) any later version.
+
+Presto is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License
+along with Presto.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
+      </text>
+   </aboutInfo>
+
+   <configIni use="default">
+   </configIni>
+
+   <launcherArgs>
+      <vmArgs>-Xmx768m</vmArgs>
+      <vmArgsMac>-XstartOnFirstThread -Dorg.eclipse.swt.internal.carbon.smallFonts</vmArgsMac>
+   </launcherArgs>
+
+   <windowImages i16="/Presto/icons/presto_16.png" i32="/Presto/icons/presto_32.png" i48="/Presto/icons/presto_48.png" i64="/Presto/icons/presto_64.png" i128="/Presto/icons/presto_128.png"/>
+
+   <splash
+      startupProgressRect="5,275,445,15"
+      startupMessageRect="7,240,445,20"
+      startupForegroundColor="C0C0C0" />
+   <launcher name="presto">
+      <solaris/>
+      <win useIco="false">
+         <bmp
+            winSmallHigh="/Presto/icons/presto_16x16_32.bmp"
+            winSmallLow="/Presto/icons/presto_16x16_8.bmp"
+            winMediumHigh="/Presto/icons/presto_32x32_32.bmp"
+            winMediumLow="/Presto/icons/presto_32x32_8.bmp"
+            winLargeHigh="/Presto/icons/presto_48x48_32.bmp"
+            winLargeLow="/Presto/icons/presto_48x48_8.bmp"/>
+      </win>
+   </launcher>
+
+
+   <vm>
+      <windows>org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jre1.6.0_05</windows>
+   </vm>
+
+   <plugins>
+      <plugin id="Presto"/>
+      <plugin id="com.ibm.icu"/>
+      <plugin id="org.eclipse.core.commands"/>
+      <plugin id="org.eclipse.core.contenttype"/>
+      <plugin id="org.eclipse.core.databinding"/>
+      <plugin id="org.eclipse.core.expressions"/>
+      <plugin id="org.eclipse.core.jobs"/>
+      <plugin id="org.eclipse.core.runtime"/>
+      <plugin id="org.eclipse.core.runtime.compatibility.registry" fragment="true"/>
+      <plugin id="org.eclipse.equinox.app"/>
+      <plugin id="org.eclipse.equinox.common"/>
+      <plugin id="org.eclipse.equinox.preferences"/>
+      <plugin id="org.eclipse.equinox.registry"/>
+      <plugin id="org.eclipse.help"/>
+      <plugin id="org.eclipse.jface"/>
+      <plugin id="org.eclipse.jface.databinding"/>
+      <plugin id="org.eclipse.osgi"/>
+      <plugin id="org.eclipse.swt"/>
+      <plugin id="org.eclipse.swt.win32.win32.x86" fragment="true"/>
+      <plugin id="org.eclipse.ui"/>
+      <plugin id="org.eclipse.ui.workbench"/>
+   </plugins>
+
+</product>
